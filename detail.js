@@ -37,4 +37,29 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     document.querySelector("#data").appendChild(dataElement)
 
+    const deleteButton = document.querySelector('#deleteBtn')
+    deleteButton.addEventListener('click', ()=> {
+
+        deleteRide(rideID)
+        window.location.href = './'
+    })
+
+    // site para mudar o mapa:  https://leaflet-extras.github.io/leaflet-providers/preview/
+    const map = L.map("mapDetail")
+    map.setView([firstPosition.latitude, firstPosition.longitude], 16)
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        maxZoom: 20,
+        // attribution: '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+
+    const postionsArray = ride.data.map((position => {
+        return [position.latitude, position.longitude]
+    }))
+    
+    const polyLine = L.polyLine(postionsArray, { color: "#F00"})
+    polyLine.addTo(map)
+
+    map.fitBounds(polyLine.getBounds())
+
 })
