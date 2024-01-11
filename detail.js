@@ -53,11 +53,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     }).addTo(map);
 
 
-    const postionsArray = ride.data.map((position => {
+    const positionsArray = ride.data.map((position => {
         return [position.latitude, position.longitude]
     }))
     
-    const polyLine = L.polyLine(postionsArray, { color: "#F00"})
+    const polyLine = L.polyLine[positionsArray, { color: "#ffa500"}]
     polyLine.addTo(map)
 
     map.fitBounds(polyLine.getBounds())
