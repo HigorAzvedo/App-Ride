@@ -8,7 +8,7 @@ allRide.forEach(async ([id, value]) => {
 
     const itemElement = document.createElement('li')
     itemElement.id = ride.id
-    itemElement.className = "d-flex p-1 align-items-center shadow-sm gap-3"
+    itemElement.className = "d-flex p-2 align-items-center gap-3 border rounded-3"
     rideListElement.appendChild(itemElement)
 
     itemElement.addEventListener('click', () =>{
