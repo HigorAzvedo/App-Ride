@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     durationDiv.innerText = `Duration: ${getDuration(ride)}`
     dataElement.appendChild(durationDiv)
 
-
     const dateDiv = document.createElement('div')
     dateDiv.innerText = getStartDate(ride)
     dataElement.appendChild(dateDiv)
@@ -57,7 +56,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         return [position.latitude, position.longitude]
     }))
     
-    const polyLine = L.polyLine[positionsArray, { color: "#ffa500"}]
+    const polyLine = L.polyLine(positionsArray, { color: "#F00"})
     polyLine.addTo(map)
 
     map.fitBounds(polyLine.getBounds())

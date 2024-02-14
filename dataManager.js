@@ -41,7 +41,7 @@ function getDistance(positions){
         Math.cos(toRad(p1.latitude)) * 
         Math.cos(toRad(p2.latitude)) 
 
-        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
 
         const distance = earthRadiusKm * c
 
